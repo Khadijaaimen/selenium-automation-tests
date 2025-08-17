@@ -19,7 +19,7 @@ The project covers end-to-end test automation workflows including login, form su
 ---
 
 ## Project Structure
-├── src/
+```├── src/
 │ ├── test/java/
 │ │ ├── tests/ # Test classes
 │ │ ├── pages/ # Page Object Model classes
@@ -29,7 +29,7 @@ The project covers end-to-end test automation workflows including login, form su
 ├── target/surefire-reports # Auto-generated reports after running tests
 ├── reports/ # Copied reports for GitHub visibility
 └── README.md # Project documentation
-
+```
 
 ---
 
