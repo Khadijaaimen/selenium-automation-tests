@@ -26,8 +26,8 @@ The project covers end-to-end test automation workflows including login, form su
 │ │ └── utils/ # Utility classes (driver setup, helpers)
 ├── pom.xml # Maven dependencies
 ├── testng.xml # TestNG suite file (if used)
-├── target/surefire-reports # Auto-generated reports after running tests
-├── reports/ # Copied reports for GitHub visibility
+├── reports/ # Copied reports for GitHub visibility and
+├── reports/index.html # Auto-generated reports after running tests
 └── README.md # Project documentation
 ```
 
