@@ -8,12 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.support.events.internal.EventFiringKeyboard;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import pages.HomePage;
 import utils.CookieManager;
 import utils.EventReporter;
@@ -22,6 +18,7 @@ import utils.WindowManager;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
 
 public class BaseTests {
 
@@ -33,6 +30,7 @@ public class BaseTests {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new EventFiringWebDriver(new ChromeDriver(getChromeOptions()));
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
         driver.register(new EventReporter());
         goHome();
     }
@@ -73,7 +71,12 @@ public class BaseTests {
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         options.setExperimentalOption("useAutomationExtension", false);
-        //options.setHeadless(true);
+
+        // read the "headless" property passed from Maven
+        String headless = System.getProperty("headless");
+        if ("true".equalsIgnoreCase(headless)) {
+            options.addArguments("--headless=new", "--window-size=1920,1080");
+        }
         return options;
     }
 }
