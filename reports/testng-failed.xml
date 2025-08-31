@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AutomationSuite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="AlertTests(failed)" verbose="0">
+    <classes>
+      <class name="alerts.FileUploadTests">
+        <methods>
+          <include name="goHome"/>
+          <include name="testFileUpload"/>
+          <include name="recordFailure"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- alerts.FileUploadTests -->
+      <class name="alerts.AlertTests">
+        <methods>
+          <include name="goHome"/>
+          <include name="testInputAnAlert"/>
+          <include name="testAcceptAlert"/>
+          <include name="recordFailure"/>
+          <include name="testGetTextFromAlert"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- alerts.AlertTests -->
+      <class name="alerts.ContextMenuTests">
+        <methods>
+          <include name="goHome"/>
+          <include name="testContextMenu"/>
+          <include name="recordFailure"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- alerts.ContextMenuTests -->
+    </classes>
+  </test> <!-- AlertTests(failed) -->
+</suite> <!-- Failed suite [AutomationSuite] -->
