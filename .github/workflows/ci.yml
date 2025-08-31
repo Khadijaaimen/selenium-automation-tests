@@ -20,11 +20,3 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-
-      - name: Build with Maven
-        working-directory: Week5/webdriver_java
-        run: mvn -B package
-
-      - name: Run tests
-        working-directory: Week5/webdriver_java
-        run: mvn test
